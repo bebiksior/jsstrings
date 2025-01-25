@@ -15,8 +15,8 @@ content := `const str = "hello world";`
 // Extract strings, passing the JS content and a URL for reference
 strings, err := jsstrings.ExtractStrings(content, "https://example.com/script.js")
 if err != nil {
-	fmt.Printf("Error extracting strings: %v\n", err)
-	return
+  fmt.Printf("Error extracting strings: %v\n", err)
+  return
 }
 
 fmt.Println(strings)
