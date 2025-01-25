@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	jsstrings "github.com/bebiksior/jsstrings/strings"
+	jsstrings "github.com/bebiksior/jsstrings"
 )
 
 func main() {

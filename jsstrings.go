@@ -5,6 +5,17 @@ import (
 	"github.com/t14raptor/go-fast/parser"
 )
 
+type JSStringWithURL struct {
+	Value     string     `json:"value"`
+	Locations []Location `json:"locations"`
+	SourceURL string     `json:"source_url"`
+}
+
+type Location struct {
+	StartIdx int
+	EndIdx   int
+}
+
 type StringExtractVisitor struct {
 	ast.NoopVisitor
 	Strings []JSStringWithURL
