@@ -10,6 +10,7 @@ import (
 )
 
 func main() {
+	showFiles := flag.Bool("show-files", false, "Show which file each string comes from")
 	flag.Parse()
 	args := flag.Args()
 
@@ -42,7 +43,11 @@ func main() {
 
 			for _, s := range strings {
 				if !seenStrings[s.Value] {
-					fmt.Printf("%s: %s\n", file, s.Value)
+					if *showFiles {
+						fmt.Printf("%s: %s\n", file, s.Value)
+					} else {
+						fmt.Println(s.Value)
+					}
 					seenStrings[s.Value] = true
 				}
 			}
